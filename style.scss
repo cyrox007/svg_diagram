@@ -1,0 +1,127 @@
+.canvas {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 800px;
+
+    .unit {
+        fill: none;
+        stroke-width: 10;
+
+        &:nth-child(1) {
+            stroke: #86cfa3;
+            stroke-dasharray: 8 100;
+        }
+
+        &:nth-child(2) {
+            stroke: #a2c6e0;
+            stroke-dasharray: 11 100;
+            stroke-dashoffset: -8;
+        }
+
+        &:nth-child(3) {
+            stroke: #ffc7ec;
+            stroke-dasharray: 11 100;
+            stroke-dashoffset: -19;
+        }
+
+        &:nth-child(4) {
+            stroke: red;
+            stroke-dasharray: 15 100;
+            stroke-dashoffset: -30;
+        }
+
+        &:nth-child(5) {
+            stroke: blueviolet;
+            stroke-dasharray: 20 100;
+            stroke-dashoffset: -45;
+        }
+
+        &:nth-child(6) {
+            stroke: brown;
+            stroke-dasharray: 35 100;
+            stroke-dashoffset: -65;
+        }
+        animation-name: render;
+        animation-duration: 1.5s;
+        transition-property: all; 
+        transition-duration: 1.5s;
+        &:hover {
+            opacity: 0.8;
+            stroke-width: 12;
+        }
+    }
+
+    .legend {
+        max-width: 250px;
+        margin-left: 30px;
+
+        .title {
+            font-family: "Verdana", sans-serif;
+            font-size: 18px;
+            line-height: 21px;
+            color: #591d48;
+        }
+
+        .caption-list {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+
+            .caption-item {
+                position: relative;
+                margin: 20px 0;
+                padding-left: 30px;
+                font-family: "Verdana", sans-serif;
+                font-size: 16px;
+                line-height: 18px;
+                color: #591d48;
+                cursor: pointer;
+
+                &:hover {
+                    opacity: 0.8;
+                }
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 20px;
+                    height: 20px;
+                    border-radius: 8px;
+                }
+
+                &:nth-child(1)::before {
+                    background-color: #86cfa3;
+                }
+
+                &:nth-child(2)::before {
+                    background-color: #a2c6e0;
+                }
+
+                &:nth-child(3)::before {
+                    background-color: #ffc7ec;
+                }
+
+                &:nth-child(4)::before {
+                    background-color: #86cfa3;
+                }
+
+                &:nth-child(5)::before {
+                    background-color: #a2c6e0;
+                }
+
+                &:nth-child(6)::before {
+                    background-color: #ffc7ec;
+                }
+            }
+        }
+    }
+}
+
+@keyframes render {
+    0% {
+        stroke-dasharray: 0 100;
+    }
+}
